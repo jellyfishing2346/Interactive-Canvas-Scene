@@ -3,9 +3,9 @@ const ctx = canvas.getContext('2d');
 
 // Load images and sounds
 const backgrounds = {
-    sky: 'sky.jpg',
-    forest: 'forest.jpg',
-    desert: 'desert.jpg'
+    sky:    'images/sky.jpg',
+    forest: 'images/forest.jpg',
+    desert: 'images/desert.jpg'
 };
 
 const characterImage = new Image();
@@ -22,9 +22,9 @@ items.item2.image.src = 'item2.png';
 items.item3.image.src = 'item3.png';
 
 const sounds = {
-    sound1: new Audio('sound1.mp3'),
-    sound2: new Audio('sound2.mp3'),
-    sound3: new Audio('sound3.mp3')
+    sound1: new Audio('sounds/sound1.mp3'),
+    sound2: new Audio('sounds/sound2.mp3'),
+    sound3: new Audio('sounds/sound3.mp3')
 };
 
 // Initial state
