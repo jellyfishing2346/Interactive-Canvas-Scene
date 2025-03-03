@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Canvas Scene</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Interactive Canvas Scene</h1>
+
+    <!-- Forms -->
+    <div class="controls">
+        <!-- Background Selection -->
+        <fieldset>
+            <legend>Select Background</legend>
+            <label><input type="radio" name="background" value="sky" checked> Sky</label>
+            <label><input type="radio" name="background" value="forest"> Forest</label>
+            <label><input type="radio" name="background" value="desert"> Desert</label>
+        </fieldset>
+
+        <!-- Character Position Slider -->
+        <fieldset>
+            <legend>Move Character</legend>
+            <label>X Position: <input type="range" id="xSlider" min="0" max="500" value="250"></label>
+            <label>Y Position: <input type="range" id="ySlider" min="0" max="500" value="250"></label>
+        </fieldset>
+
+        <!-- Toggle Items -->
+        <fieldset>
+            <legend>Toggle Items</legend>
+            <label><input type="checkbox" id="item1"> Item 1</label>
+            <label><input type="checkbox" id="item2"> Item 2</label>
+            <label><input type="checkbox" id="item3"> Item 3</label>
+        </fieldset>
+
+        <!-- Sound Effects -->
+        <fieldset>
+            <legend>Sound Effects</legend>
+            <button id="sound1">Play Sound 1</button>
+            <button id="sound2">Play Sound 2</button>
+            <button id="sound3">Play Sound 3</button>
+        </fieldset>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="sceneCanvas" width="600" height="600"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
