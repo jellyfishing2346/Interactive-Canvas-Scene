@@ -3,13 +3,16 @@ const ctx = canvas.getContext('2d');
 
 // Load images and sounds
 const backgrounds = {
-    sky:    'images/sky.jpg',
+    sky: 'images/sky.jpg',
     forest: 'images/forest.jpg',
     desert: 'images/desert.jpg'
 };
 
 const characterImage = new Image();
-characterImage.src = 'character.png';
+characterImage.src = 'images/character.png';
+characterImage.onerror = () => {
+    console.error('Failed to load character image');
+};
 
 const items = {
     item1: { image: new Image(), visible: false },
@@ -17,9 +20,20 @@ const items = {
     item3: { image: new Image(), visible: false }
 };
 
-items.item1.image.src = 'item1.png';
-items.item2.image.src = 'item2.png';
-items.item3.image.src = 'item3.png';
+items.item1.image.src = 'images/item1.png';
+items.item1.image.onerror = () => {
+    console.error('Failed to load item1 image');
+};
+
+items.item2.image.src = 'images/item2.png';
+items.item2.image.onerror = () => {
+    console.error('Failed to load item2 image');
+};
+
+items.item3.image.src = 'images/item3.png';
+items.item3.image.onerror = () => {
+    console.error('Failed to load item3 image');
+};
 
 const sounds = {
     sound1: new Audio('sounds/sound1.mp3'),
@@ -66,15 +80,21 @@ document.getElementById('item3').addEventListener('change', (e) => {
 });
 
 document.getElementById('sound1').addEventListener('click', () => {
-    sounds.sound1.play();
+    sounds.sound1.play().catch(() => {
+        console.error('Failed to play sound1');
+    });
 });
 
 document.getElementById('sound2').addEventListener('click', () => {
-    sounds.sound2.play();
+    sounds.sound2.play().catch(() => {
+        console.error('Failed to play sound2');
+    });
 });
 
 document.getElementById('sound3').addEventListener('click', () => {
-    sounds.sound3.play();
+    sounds.sound3.play().catch(() => {
+        console.error('Failed to play sound3');
+    });
 });
 
 // Draw the scene
@@ -89,18 +109,23 @@ function drawScene() {
         ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
         // Draw character
-        ctx.drawImage(characterImage, characterX, characterY, 50, 50);
+        if (characterImage.complete && characterImage.naturalWidth !== 0) {
+            ctx.drawImage(characterImage, characterX, characterY, 50, 50);
+        }
 
         // Draw items
-        if (items.item1.visible) {
+        if (items.item1.visible && items.item1.image.complete && items.item1.image.naturalWidth !== 0) {
             ctx.drawImage(items.item1.image, 100, 100, 50, 50);
         }
-        if (items.item2.visible) {
+        if (items.item2.visible && items.item2.image.complete && items.item2.image.naturalWidth !== 0) {
             ctx.drawImage(items.item2.image, 400, 100, 50, 50);
         }
-        if (items.item3.visible) {
+        if (items.item3.visible && items.item3.image.complete && items.item3.image.naturalWidth !== 0) {
             ctx.drawImage(items.item3.image, 250, 400, 50, 50);
         }
+    };
+    backgroundImage.onerror = () => {
+        console.error('Failed to load background image');
     };
 }
 
