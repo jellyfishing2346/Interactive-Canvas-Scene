@@ -11,7 +11,7 @@ const backgrounds = {
 const characterImage = new Image();
 characterImage.src = 'images/character.png';
 characterImage.onerror = () => {
-    console.error('Failed to load character image');
+    console.error('Failed to load character image. Path:', characterImage.src);
 };
 
 const items = {
