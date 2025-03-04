@@ -36,7 +36,8 @@ fieldset {
 legend {
     position: absolute; /* Position the legend absolutely */
     top: -10px; /* Adjust this value to move the legend up */
-    left: 10px; /* Adjust this value to move the legend left/right */
+    left: 50%; /* Center the legend horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
     background: white; /* Match the background color of the page */
     padding: 0 10px; /* Padding inside the legend */
     font-weight: bold;
