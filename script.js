@@ -9,7 +9,7 @@ const backgrounds = {
 };
 
 const characterImage = new Image();
-characterImage.src = 'images/character.png';
+characterImage.src = 'images/character.jpg';
 characterImage.onerror = () => {
     console.error('Failed to load character image. Path:', characterImage.src);
 };
