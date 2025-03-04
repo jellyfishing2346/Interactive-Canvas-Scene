@@ -22,43 +22,36 @@ h1 {
     gap: 20px;
 }
 
-/* Align radio buttons and labels horizontally */
+fieldset {
+    width: 100%;
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
 fieldset label {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 10px 0;
-}
-
-/* Ensure radio buttons and checkboxes are properly spaced */
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 10px;
-    margin-left: 0; /* Reset any default left margin */
-}
-
-/* Adjust the width of the fieldset to prevent labels from sticking out */
-fieldset {
-    width: 100%;
-    max-width: 400px; /* Adjust as needed */
-    margin: 10px auto; /* Center the fieldset */
-}
-
-/* Ensure the legend text doesn't overflow */
-legend {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
 }
 
-/* Improve spacing for the "Move Character" sliders */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
 #xSlider,
 #ySlider {
     width: 100%;
     margin: 10px 0;
 }
 
-/* Adjust button spacing */
 button {
     margin: 5px;
 }
@@ -82,7 +75,6 @@ canvas {
     margin-top: 20px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .controls {
         flex-direction: column;
