@@ -22,55 +22,45 @@ h1 {
     gap: 20px;
 }
 
-fieldset {
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-fieldset:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-legend {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #555;
-    padding: 0 10px;
-}
-
-label {
-    display: block;
+/* Align radio buttons and labels horizontally */
+fieldset label {
+    display: flex;
+    align-items: center;
     margin: 10px 0;
-    font-size: 1rem;
-    color: #666;
 }
 
+/* Ensure radio buttons and checkboxes are properly spaced */
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 10px;
+    margin-left: 0; /* Reset any default left margin */
 }
 
-input[type="range"] {
-    width: 80%;
+/* Adjust the width of the fieldset to prevent labels from sticking out */
+fieldset {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    margin: 10px auto; /* Center the fieldset */
+}
+
+/* Ensure the legend text doesn't overflow */
+legend {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Improve spacing for the "Move Character" sliders */
+#xSlider,
+#ySlider {
+    width: 100%;
     margin: 10px 0;
 }
 
+/* Adjust button spacing */
 button {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 5px;
 }
 
 button:hover {
